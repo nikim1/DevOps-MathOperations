@@ -1,5 +1,5 @@
 import unittest
-from src.cal import cal
+from src.cal import add, subtract, multiply, divide  
 
 class TestCalculator(unittest.TestCase):
 
