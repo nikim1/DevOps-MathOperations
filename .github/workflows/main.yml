@@ -51,7 +51,7 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r src/requirements.txt
 
       - name: Run unit tests
         run: python3 -m unittest test/cal-test.py
