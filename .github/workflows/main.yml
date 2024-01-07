@@ -124,3 +124,42 @@ jobs:
             ignore-unfixed: true
             vuln-type: 'os,library'
             severity: 'CRITICAL,HIGH'
+
+  Deploy-To-Minikube:
+    runs-on: ubuntu-latest
+    name: Deploy Image to minikube
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Start minikube
+      run: minikube start
+
+    - name: Try the cluster !
+      run: kubectl get pods -A
+
+    - name: Pull Docker Image from Docker Hub
+      run: |
+        docker pull ${{ secrets.DOCKERHUB_USERNAME }}/mathoperations:latest
+        docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+
+    - name: Deploy to minikube
+      run: |
+        kubectl apply -f k8s-deployment.yaml
+        kubectl apply -f k8s-service.yaml
+
+    - name: Wait for Deployment
+      run: |
+        kubectl rollout status deployment/calc
+
+    - name: Expose Service
+      run: |
+
+        minikube service list
+        minikube service calc --url
+        echo "------------------opening the service------------------"
+        curl $(minikube service calc --url)  
+        
+    - name: Stop Minikube
+      run: | 
+        minikube stop
