@@ -124,3 +124,42 @@ jobs:
             ignore-unfixed: true
             vuln-type: 'os,library'
             severity: 'CRITICAL,HIGH'
+  
+  Minikube:
+    runs-on: ubuntu-latest
+    needs: ["Trivy"]
+    name: Deploy Image to minikube
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Start minikube
+      uses: medyagh/setup-minikube@master
+
+    - name: Try the cluster !
+      run: kubectl get pods -A
+
+    - name: Pull Docker Image from Docker Hub
+      run: |
+        docker pull ${{ secrets.DOCKER_USERNAME }}/devops-mathoperations:latest
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Deploy to minikube
+      run:
+        kubectl apply -f k8s_manifests/
+
+    - name: Wait for Deployment
+      run: |
+        kubectl rollout status deployment/devops-mathoperations-deployment
+
+    - name: Expose Service
+      run: |
+
+        minikube service list
+        minikube service devops-mathoperations-node-port --url
+        echo "------------------opening the service------------------"
+        curl $(minikube service devops-mathoperations-node-port --url)  
+        
+    - name: Stop Minikube
+      run: | 
+        minikube stop
