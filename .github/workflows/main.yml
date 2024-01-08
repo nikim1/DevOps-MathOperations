@@ -128,7 +128,7 @@ jobs:
   Minikube:
     runs-on: ubuntu-latest
     needs: ["Trivy"]
-    name: Deploy Image to minikube
+    name: Image to minikube
 
     steps:
     - uses: actions/checkout@v3
@@ -145,8 +145,9 @@ jobs:
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Deploy to minikube
-      run:
-        kubectl apply -f k8s_manifests/
+      run: |
+        kubectl apply -f K8s/deployment.yaml
+        kubectl apply -f K8s/service.yaml
 
     - name: Wait for Deployment
       run: |
