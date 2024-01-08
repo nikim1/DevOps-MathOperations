@@ -63,7 +63,7 @@ to the DockerHub.
 ### Stage 5: Trivy
 
 It inspects container images and their components to identify potential security
-issues, including OS packages, application libraries, and other dependencies. 
+issues, including OS packages, application libraries, and other dependencies.
 
 ### Stage 6: Deploy Image To Minikube
 
