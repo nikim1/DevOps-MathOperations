@@ -150,14 +150,14 @@ jobs:
 
     - name: Wait for Deployment
       run: |
-        kubectl rollout status deployment/calc
+        kubectl rollout status deployment/calc-dep
 
     - name: Expose Service
       run: |
 
         minikube service list
-        minikube service calc --url
-        curl $(minikube service calc --url)  
+        minikube service calc-service --url
+        curl $(minikube service calc-service --url)  
         
     - name: Stop Minikube
       run: | 

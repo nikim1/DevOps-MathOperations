@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: calc
+  name: calc-service
 spec:
   selector:
-    app: calc
+    app: DevOps-MathOperations
   type: NodePort
   ports:
     - protocol: TCP

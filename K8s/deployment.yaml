@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: calc
+  name: calc-dep
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: calc
+      app: DevOps-MathOperations
   template:
     metadata:
       labels:
-        app: calc
+        app: DevOps-MathOperations
     spec:
       containers:
       - name: calc
-        image: calc
+        image: nikim1/devops-mathoperations:latest
         ports:
         - containerPort: 5000
