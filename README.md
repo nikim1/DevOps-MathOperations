@@ -3,8 +3,10 @@
 ## Introduction
 
 DevOps-MathOperations project is a Flask-based web application that provides
-basic math operations such as addition, subtraction, multiplication and division. 
-The project utilizes Flask for the backend, Docker for containerization, GitHub Actions for Continuous Integration/Continuous Deployment (CI/CD) and Minikube(Local Kubernetes enviroment) to deploy.
+basic math operations such as addition, subtraction, multiplication and
+division. The project utilizes Flask for the backend, Docker for containerization, 
+GitHub Actions for Continuous Integration/Continuous Deployment (CI/CD) and 
+Minikube (Local Kubernetes enviroment) to deploy.
 
 ## Technologies
 
