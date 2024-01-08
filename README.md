@@ -29,9 +29,14 @@ Actions workflow files and Docker configuration.
 
 ### Stage 1: Style Checks
 
-* __CheckCodeStyle:__
-* __EditorconfigCheck:__
-* __Markdownfilescheck:__
+* __CheckCodeStyle:__ ensures that the code adheres to predefined style guidelines and standards,
+  maintaining consistency and readability across the codebase
+* __EditorconfigCheck:__ verifies whether the file adheres to the specified configurations defined
+  in the EditorConfig file, ensuring consistent formatting across different editors and IDEs used
+  by multiple contributors in a project
+* __Markdownfilescheck:__  verifies whether the file adheres to the specified configurations defined
+  in the EditorConfig file, ensuring consistent formatting across different editors and IDEs used by
+  multiple contributors in a project
 
 ### Stage 2: UnitTests
 
@@ -40,15 +45,15 @@ Unit tests are a type of test in software testing that examine individual pieces
 Unit tests are used to ensure the correctness of small, isolated pieces of
 program code.
 
-### Stage 2: Build
-
-The client and server applications are built with version 21 of the Maven compiler,
-and the build artifacts are uploaded so they can be used in later stages.
-
 ### Stage 3: Code Style & Security Checks
 
-* __SonarcloudTest:__
-* __SnykTest:__
+* __SonarcloudTest:__ evaluates code quality and security analysis. It inspects the
+  codebase, identifies potential bugs, security vulnerabilities and provides detailed
+  reports and insights to enhance code quality and maintainability
+* __SnykTest:__ security analysis that focuses on identifying vulnerabilities within
+  project dependencies. It scans the project's dependencies, flags any known security
+  issues, and provides guidance on fixing or patching these vulnerabilities to bolster
+  overall project security
 
 ### Stage 4: Build
 
@@ -89,18 +94,21 @@ Change the container image in the k8s-deployment.yaml file to your image
 kubectl apply -f k8s_deployment.yaml  
 kubectl apply -f k8s_service.yaml
 
-#### Step 3: Verify that everything is up and running
+#### Step 5: Verify that everything is up and running
 
 kubectl get pods
 kubectl get deployments
 kubectl get services
 
 You should see the name of the image. Against it you must:
+
 At kubectl get pods - in the Status field to write Running
+
 At kubectl get deployments - on the Ready fiels to write 1/1
+
 At kubectl get services - on the External-IP field to write 1/1
 
-#### Step 4: Run the project
+#### Step 6: Run the project
 
 minikube service image-name
 
