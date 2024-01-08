@@ -127,7 +127,7 @@ jobs:
 
   Deploy-To-Minikube:
     runs-on: ubuntu-latest
-    name: Deploy Image to minikube
+    name: Deploy Image to Minikube
 
     steps:
     - uses: actions/checkout@v3
@@ -140,7 +140,7 @@ jobs:
 
     - name: Pull Docker Image from Docker Hub
       run: |
-        docker pull ${{ secrets.DOCKERHUB_USERNAME }}/mathoperations:latest
+        docker pull ${{ secrets.DOCKERHUB_USERNAME }}/devops-mathoperations
         docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
 
     - name: Deploy to minikube
