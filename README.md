@@ -118,3 +118,5 @@ At kubectl get services - on the External-IP field to write 1/1
 minikube service image-name
 
 The project will run in your cluster and open it in your default Web Browser.
+
+![pipeline](https://github.com/nikim1/DevOps-MathOperations/assets/68859426/abb46f09-aaf3-4d2f-bf9e-6c9c22eba2db)
