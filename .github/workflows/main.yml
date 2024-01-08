@@ -148,13 +148,12 @@ jobs:
       run: |
         kubectl apply -f K8s/
 
-    - name: Wait for Deployment
-      run: |
-        kubectl rollout status deployment/calc-dep
+   # - name: Wait for Deployment
+   #   run: |
+   #     kubectl rollout status deployment/calc-dep
 
     - name: Expose Service
       run: |
-
         minikube service list
         minikube service calc-service --url
         curl $(minikube service calc-service --url)  
