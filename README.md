@@ -17,7 +17,7 @@ Deployment (CI/CD) and Minikube (Local Kubernetes enviroment) to deploy.
 * __Snyk:__ A security platform that helps find and fix vulnerabilities in dependencies.
 * __Trivy:__ A simple and comprehensive vulnerability scanner for containers.
 * __Docker:__ A platform for automating application deployment and managing
-* containerized applications.
+ containerized applications.
 * __Minikube:__ Tool to run a single Kubernetes cluster locally on the computer
   
 ## Structure
@@ -62,12 +62,13 @@ manifests from the project repository.
 
 ## Start the project
 
-The program can be launched with Docker or Minikube.
+The program can be launched with Docker and Minikube.
 
-### Requirements for launching from Docker
+### Requirements for launching from Minikube
 
-* __Install Docker__
-* __Clone This Repository__
+* __Installed Docker__
+* __Install Minikube__
+* __Install kubectl__
 
 #### Step 1: Building the Docker Image
 
@@ -77,32 +78,18 @@ docker build -t image-name .
 
 docker run -p 5000:5000 image-name
 
-#### Requirements for launching from Minikube
-
-* __Installed Docker__
-* __Install Minikube__
-* __Install kubectl__
-
-##### Step 1: Building the Docker Image
-
-docker build -t image-name .
-
-##### Step 2: Running the Container
-
-docker run -p 5000:5000 image-name
-
-##### Step 3: Start Minikube
+#### Step 3: Start Minikube
 
 minikube start
 
-##### Step 4: Apply the yaml files
+#### Step 4: Apply the yaml files
 
 Change the container image in the k8s-deployment.yaml file to your image
 
 kubectl apply -f k8s_deployment.yaml  
 kubectl apply -f k8s_service.yaml
 
-##### Step 3: Verify that everything is up and running
+#### Step 3: Verify that everything is up and running
 
 kubectl get pods
 kubectl get deployments
@@ -113,7 +100,7 @@ At kubectl get pods - in the Status field to write Running
 At kubectl get deployments - on the Ready fiels to write 1/1
 At kubectl get services - on the External-IP field to write 1/1
 
-##### Step 4: Run the project
+#### Step 4: Run the project
 
 minikube service image-name
 
