@@ -29,14 +29,14 @@ Actions workflow files and Docker configuration.
 
 ### Stage 1: Style Checks
 
-* __CheckCodeStyle:__ ensures that the code adheres to predefined style guidelines and standards,
-  maintaining consistency and readability across the codebase
-* __EditorconfigCheck:__ verifies whether the file adheres to the specified configurations defined
-  in the EditorConfig file, ensuring consistent formatting across different editors and IDEs used
-  by multiple contributors in a project
-* __Markdownfilescheck:__  verifies whether the file adheres to the specified configurations defined
-  in the EditorConfig file, ensuring consistent formatting across different editors and IDEs used by
-  multiple contributors in a project
+* __CheckCodeStyle:__ ensures that the code adheres to predefined style
+  guidelines and standards, maintaining consistency and readability across the codebase
+* __EditorconfigCheck:__ verifies whether the file adheres to the specified
+  configurations defined in the EditorConfig file, ensuring consistent formatting
+  across different editors and IDEs used by multiple contributors in a project
+* __Markdownfilescheck:__  verifies whether the file adheres to the specified
+  configurations defined in the EditorConfig file, ensuring consistent formatting
+  across different editors and IDEs used by multiple contributors in a project
 
 ### Stage 2: UnitTests
 
