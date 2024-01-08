@@ -94,10 +94,10 @@ minikube start
 
 #### Step 4: Apply the yaml files
 
-Change the container image in the k8s-deployment.yaml file to your image
+Change the container image in the deployment.yaml file to your image
 
-kubectl apply -f k8s_deployment.yaml  
-kubectl apply -f k8s_service.yaml
+kubectl apply -f deployment.yaml  
+kubectl apply -f service.yaml
 
 #### Step 5: Verify that everything is up and running
 
@@ -118,3 +118,5 @@ At kubectl get services - on the External-IP field to write 1/1
 minikube service image-name
 
 The project will run in your cluster and open it in your default Web Browser.
+
+![pipeline](https://github.com/nikim1/DevOps-MathOperations/assets/68859426/abb46f09-aaf3-4d2f-bf9e-6c9c22eba2db)
