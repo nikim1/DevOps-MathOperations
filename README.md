@@ -69,7 +69,7 @@ The program can be launched with Docker or Minikube.
 * __Install Docker__
 * __Clone This Repository__
 
-#### Step 1: Building the Docker Image 
+#### Step 1: Building the Docker Image
 
 docker build -t image-name .
 
@@ -77,7 +77,7 @@ docker build -t image-name .
 
 docker run -p 5000:5000 image-name
 
-### Requirements for launching from Minikube
+#### Requirements for launching from Minikube
 
 * __Installed Docker__
 * __Install Minikube__
@@ -87,7 +87,7 @@ docker run -p 5000:5000 image-name
 
 docker build -t image-name .
 
-##### Step 2: Running the Container 
+##### Step 2: Running the Container
 
 docker run -p 5000:5000 image-name
 
@@ -111,7 +111,7 @@ kubectl get services
 You should see the name of the image. Against it you must:
 At kubectl get pods - in the Status field to write Running
 At kubectl get deployments - on the Ready fiels to write 1/1
-At kubectl get services - on the External-IP field to write <none>
+At kubectl get services - on the External-IP field to write 1/1
 
 ##### Step 4: Run the project
 
