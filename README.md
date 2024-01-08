@@ -72,7 +72,7 @@ minikube start
 Change the container image in the k8s-deployment.yaml file to your image
 
 kubectl apply -f k8s_deployment.yaml  
-kubectl apply -f k8s_servicet.yaml
+kubectl apply -f k8s_service.yaml
 
 ### Step 3: Verify that everything is up and running:
 kubectl get pods
