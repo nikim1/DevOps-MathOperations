@@ -94,10 +94,10 @@ minikube start
 
 #### Step 4: Apply the yaml files
 
-Change the container image in the k8s-deployment.yaml file to your image
+Change the container image in the deployment.yaml file to your image
 
-kubectl apply -f k8s_deployment.yaml  
-kubectl apply -f k8s_service.yaml
+kubectl apply -f deployment.yaml  
+kubectl apply -f service.yaml
 
 #### Step 5: Verify that everything is up and running
 
