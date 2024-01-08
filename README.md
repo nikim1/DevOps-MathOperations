@@ -60,7 +60,12 @@ program code.
 The application build artifacts are used to create a Docker image and upload it
 to the DockerHub.
 
-### Stage 5: Deploy Image To Minikube
+### Stage 5: Trivy
+
+It inspects container images and their components to identify potential security
+issues, including OS packages, application libraries, and other dependencies. 
+
+### Stage 6: Deploy Image To Minikube
 
 Runs minikube and pulls an image from DockerHub and applies the kubernetes
 manifests from the project repository.
