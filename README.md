@@ -16,21 +16,22 @@ Deployment (CI/CD) and Minikube (Local Kubernetes enviroment) to deploy.
 * __SonarCloud:__ A cloud-based code quality and security analysis tool.
 * __Snyk:__ A security platform that helps find and fix vulnerabilities in dependencies.
 * __Trivy:__ A simple and comprehensive vulnerability scanner for containers.
-* __Docker:__ A platform for automating application deployment and managing containerized applications.
+* __Docker:__ A platform for automating application deployment and managing
+* containerized applications.
 * __Minikube:__ Tool to run a single Kubernetes cluster locally on the computer
   
 ## Structure
 
-The project structure is the typical Flask application structure with GitHub Actions workflow files
-and Docker configuration.
+The project structure is the typical Flask application structure with GitHub
+Actions workflow files and Docker configuration.
 
 ## CI/CD Pipeline
 
 ### Stage 1: Style Checks
 
-* __CheckCodeStyle:__ 
-* __EditorconfigCheck:__ 
-* __Markdownfilescheck:__ 
+* __CheckCodeStyle:__
+* __EditorconfigCheck:__
+* __Markdownfilescheck:__
 
 ### Stage 2: UnitTests
 
