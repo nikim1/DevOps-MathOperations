@@ -1,8 +1,11 @@
 # DevOps-MathOperations
-Introduction:
-DevOps-MathOperations project is a Flask-based web application that provides basic math operations such as addition, subtraction, multiplication, and division. The project utilizes Flask for the backend, Docker for containerization, GitHub Actions for Continuous Integration/Continuous Deployment (CI/CD) and Minikube(Local Kubernetes enviroment) to deploy.
 
-# Technologies
+## Introduction
+DevOps-MathOperations project is a Flask-based web application that provides basic math operations
+such as addition, subtraction, multiplication and division. 
+The project utilizes Flask for the backend, Docker for containerization, GitHub Actions for Continuous Integration/Continuous Deployment (CI/CD) and Minikube(Local Kubernetes enviroment) to deploy.
+
+## Technologies
 * __Python__
 * __Flask:__ A lightweight Python web framework.
 * __GitHub Actions:__ A CI/CD platform integrated with GitHub repositories.
@@ -11,70 +14,70 @@ DevOps-MathOperations project is a Flask-based web application that provides bas
 * __Trivy:__ A simple and comprehensive vulnerability scanner for containers.
 * __Docker:__ A platform for automating application deployment and managing containerized applications.
 * __Minikube:__ Tool to run a single Kubernetes cluster locally on the computer
-# Structure
-The project structure is the typical Flask application structure with GitHub Actions workflow files and Docker configuration.
+  
+## Structure
+The project structure is the typical Flask application structure with GitHub Actions workflow files
+and Docker configuration.
 
-# CI/CD Pipeline
-## Stage 1: Style Checks
+## CI/CD Pipeline
+### Stage 1: Style Checks
 * __CheckCodeStyle:__ 
 * __EditorconfigCheck:__ 
 * __Markdownfilescheck:__ 
 
-## Stage2: UnitTests
-Unit tests are a type of test in software testing that examine individual pieces (units) of software code to ensure that each part is working correctly. Unit tests are used to ensure the correctness of small, isolated pieces of program code.
+### Stage 2: UnitTests
+Unit tests are a type of test in software testing that examine individual pieces (units)
+of software code to ensure that each part is working correctly.
+Unit tests are used to ensure the correctness of small, isolated pieces of program code.
 
-## Stage 2: Build
-The client and server applications are built with version 21 of the Maven compiler, and the build artifacts are uploaded so they can be used in later stages.
+### Stage 2: Build
+The client and server applications are built with version 21 of the Maven compiler,
+and the build artifacts are uploaded so they can be used in later stages.
 
-## Stage 3: Code Style & Security Checks
+### Stage 3: Code Style & Security Checks
 * __SonarcloudTest:__ 
 * __SnykTest:__ 
 
-## Stage 4: Build
+### Stage 4: Build
 The application build artifacts are used to create a Docker image and upload it to the DockerHub.
 
-## Stage 5: Deploy Image To Minikube
+### Stage 5: Deploy Image To Minikube
 Runs minikube and pulls an image from DockerHub and applies the kubernetes manifests from the project repository.
 
-## Stage 6: Trivy
+## Start the project
+The program can be launched with Docker or Minikube.
 
-
-
-
-# Start the project
-The program can be launched with Docker or Minikube
-
-## Requirements for launching from Docker:
+### Requirements for launching from Docker:
 * __Install Docker__ 
 * __Clone This Repository__
 
-### Step 1: Building the Docker Image
+#### Step 1: Building the Docker Image
 docker build -t image-name .
 
-### Step 2: Running the Container
+#### Step 2: Running the Container
 docker run -p 5000:5000 image-name
 
-## Requirements for launching from Minikube:
+### Requirements for launching from Minikube:
 * __Installed Docker__
 * __Install Minikube__
 * __Install kubectl__
 
-### Step 1: Building the Docker Image
+#### Step 1: Building the Docker Image
 docker build -t image-name .
 
-### Step 2: Running the Container
+#### Step 2: Running the Container
 docker run -p 5000:5000 image-name
 
-### Step 3: Start Minikube:
+#### Step 3: Start Minikube:
 minikube start
 
-### Step 4: Apply the yaml files
+#### Step 4: Apply the yaml files
 Change the container image in the k8s-deployment.yaml file to your image
 
 kubectl apply -f k8s_deployment.yaml  
 kubectl apply -f k8s_service.yaml
 
-### Step 3: Verify that everything is up and running:
+#### Step 3: Verify that everything is up and running:
 kubectl get pods
 kubectl get deployments
 kubectl get services
@@ -84,7 +87,7 @@ At kubectl get pods - in the Status field to write Running
 At kubectl get deployments - on the Ready fiels to write 1/1
 At kubectl get services - on the External-IP field to write <none>
 
-### Step 4 Run the project
+#### Step 4: Run the project
 
 minikube service image-name
 
